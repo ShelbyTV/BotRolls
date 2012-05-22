@@ -1,0 +1,15 @@
+defaults:
+  consumer_app:
+    consumer_key: "your_tw_consumer_key_here"
+    consumer_secret: "your_tw_consumer_secrent_here"
+  espn:
+    feed_url: "http://search.espn.go.com/rss/broadband/"
+    twitter_username: "ESPNVideo"
+    tw_token: "your_tw_token_here"
+    tw_secret: "your_tw_secret_here"
+  tedx:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/tedtalksdirector/uploads?alt=rss&v=2&orderby=published"
+    twitter_username: "TedXTalksVideo"
+    tw_token: "your_tw_token_here"
+    tw_secret: "your_tw_secret_here"
+  

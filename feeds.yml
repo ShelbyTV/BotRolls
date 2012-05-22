@@ -1,0 +1,15 @@
+defaults:
+  consumer_app:
+    consumer_key: "5DNrVZpdIwhQthCJJXCfnQ"
+    consumer_secret: "Tlb35nblFFTZRidpu36Uo3z9mfcvSVv1MuZZ19SHaU"
+  espn:
+    feed_url: "http://search.espn.go.com/rss/broadband/"
+    twitter_username: "ESPNVideo"
+    tw_token: "585920921-sB7NUJjZtfQcXk1Bj74zssvCxKSAKHXyntUpCpb2"
+    tw_secret: "3rXgjL8qqOUqmt5lbNIbBmmij5ozRjSDGk1W8l5Mbw"
+  tedx:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/tedtalksdirector/uploads?alt=rss&v=2&orderby=published"
+    twitter_username: "TedXTalksVideo"
+    tw_token: "586841501-7BtXSgkMN06NjR3EFejAPkrSXTQSmNZQRZtbPNpd"
+    tw_secret: "TLSoJiZdDYOo9I9y6RRrqz3ro26cu2VxXJ2sntcdc"
+  
