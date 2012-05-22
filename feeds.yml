@@ -12,4 +12,9 @@ defaults:
     twitter_username: "TedXTalksVideo"
     tw_token: "586841501-7BtXSgkMN06NjR3EFejAPkrSXTQSmNZQRZtbPNpd"
     tw_secret: "TLSoJiZdDYOo9I9y6RRrqz3ro26cu2VxXJ2sntcdc"
+  mymusicshow:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/MyMusicShow/uploads?alt=rss&v=2&orderby=published"
+    twitter_username: "MyMusicShowVideos"
+    tw_token: ""
+    tw_secret: ""
   
