@@ -50,12 +50,12 @@ begin
 
       # Send vids to shelbz, for now via tweet (<140 char. duh)
       tweet = "#{vid['title'][0..90]}... #{vid['link']}"
-      twitter_client.statuses.update! :status=> tweet
+      tw_client.statuses.update! :status=> tweet
       puts tweet
       sleep 1
     end
     redis.set redis_key, first_new_video_time
   end
 rescue => e
-  puts "[#{Time.now}] [#{service.swap_case} VIDEO FEED ERROR]: #{e}"
+  puts "[#{Time.now}] [#{service.swapcase} VIDEO FEED ERROR]: #{e}"
 end
