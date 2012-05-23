@@ -5,8 +5,8 @@ defaults:
   espn:
     feed_url: "http://search.espn.go.com/rss/broadband/"
     twitter_username: "ESPNVideo"
-    tw_token: "585920921-sB7NUJjZtfQcXk1Bj74zssvCxKSAKHXyntUpCpb2"
-    tw_secret: "3rXgjL8qqOUqmt5lbNIbBmmij5ozRjSDGk1W8l5Mbw"
+    tw_token: "585920921-qt9vS6Bx4XVubfWp0h5qj29evTqm8m9VQvmnpNOn"
+    tw_secret: "dhDjpyQ7NrMBxdx7KPm5YpLnicoT1FUmiRVFnCoFHZ4"
   tedx:
     feed_url: "http://gdata.youtube.com/feeds/base/users/tedtalksdirector/uploads?alt=rss&v=2&orderby=published"
     twitter_username: "TedXTalksVideo"
