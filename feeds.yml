@@ -17,4 +17,44 @@ defaults:
     twitter_username: "MyMusicShowVideos"
     tw_token: ""
     tw_secret: ""
+  indie_atl:
+    feed_url: "feed://blip.tv/indieatl/rss"
+    twitter_username: "indie_atl"
+    tw_token: ""
+    tw_secret: ""
+  aimless_cook:
+    feed_url: "feed://blip.tv/theaimlesscook/rss"
+    twitter_username: "aimless_cook"
+    tw_token: ""
+    tw_secret: ""
+  best_soccer_show:
+    feed_url: "feed://blip.tv/thebestsoccershow/rss"
+    twitter_username: "best_soccer_sho"
+    tw_token: ""
+    tw_secret: ""
+  snl_shorts:
+    feed_url: "feed://www.hulu.com/feed/show/77/videos"
+    twitter_username: "snl_shorts"
+    tw_token: ""
+    tw_secret: ""
+  family_guy_clips:
+    feed_url: "feed://www.hulu.com/feed/show/54/clips"
+    twitter_username: "family_guy_clip"
+    tw_token: ""
+    tw_secret: ""
+  simpsons_clips:
+    feed_url: "feed://www.hulu.com/feed/show/58/clips"
+    twitter_username: "simpsons_clips"
+    tw_token: ""
+    tw_secret: ""
+  house_clips:
+    feed_url: "feed://www.hulu.com/feed/show/48/clips"
+    twitter_username: "house_clips"
+    tw_token: ""
+    tw_secret: ""
+  docu_films:
+    feed_url: "feed://vimeo.com/channels/documentaryfilm/videos/rss"
+    twitter_username: "docu_films"
+    tw_token: ""
+    tw_secret: ""
   
