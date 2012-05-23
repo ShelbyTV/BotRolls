@@ -14,8 +14,8 @@ service_config = config["defaults"][service]
 (puts "invalid service"; exit) unless service_config
 
 feed_url = service_config["feed_url"]
-token = service_config["token"]
-secret = service_config["secret"]
+token = service_config["tw_token"]
+secret = service_config["tw_secret"]
 
 # Grackle used for tweeting found videos for ingestion into shelby
 # [this is shelby's key/secret pair]
