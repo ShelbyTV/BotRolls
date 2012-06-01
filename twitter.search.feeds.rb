@@ -7,7 +7,8 @@ require "yaml"
 #config = YAML.load( File.read("/home/gt/utils/VideoFeedRss/feeds.yml") )
 
 # the twitter seach term:
-search_term = ARGV[0]
+search_term = URI.escape(ARGV[0])
+rpp = ARGV[1].to_i || 20
 search_client = Grackle::Client.new
 =begin
 service_config = config["defaults"][service]
@@ -37,7 +38,7 @@ tw_client = Grackle::Client.new(:auth=>{
 #last_old_video_time = redis.get redis_key
 
 # do twitter search:
-search_result = search_client[:search].search? :q => "%23espn", :include_entities => true, :rpp => 100
+search_result = search_client[:search].search? :q => search_term, :include_entities => true, :rpp => rpp
 
 begin
   # TODO:
@@ -45,7 +46,7 @@ begin
   #if last_old_video_id != first_new_video_id
     search_result.results.each do |r|
       #break if r.id == last_old_video_id
-      r.entities.urls.each {|u| puts u.expanded_url} if r.entities.urls
+      puts r.text if r.entities.urls
       #vid = { "title" => r.title,
       #        "link" => r.link,
       #        "timestamp" => r.time } 
