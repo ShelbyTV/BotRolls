@@ -77,7 +77,7 @@ begin
       
       sleep 0.5
     else
-      puts "no supported video"
+      print "."
     end
   end
 rescue => e
