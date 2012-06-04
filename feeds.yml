@@ -52,13 +52,13 @@ defaults:
     twitter_username: "house_clips"
     tw_token: "586851000-s9jYG0r3MZzP7XnXPFHPgpQBv2nNfd3AG6mGmLfU"
     tw_secret: "ypYjtTKXAI7cXA2sc22Zf61sy9Crsjvrz6LOrnlk"
-  docu_films:
-    feed_url: "http://vimeo.com/channels/documentaryfilm/videos/rss"
-    twitter_username: "docu_films"
-    tw_token: ""
-    tw_secret: ""
   surfing_roll:
     feed_url: "http://vimeo.com/groups/surfingwaves/videos/rss"
     twitter_username: "surfing_roll"
     tw_token: "588577323-1sKUg57ZQj861jogTwhbLjwIAfr5KGz42LDCbNrR"
     tw_secret: "ssiYBggYMV7XGsDRkCu9u3pvMoKtZGKoSV9eqWnSQ"
+  syria:
+    search_term: "#syria"
+    twitter_username: "syria_video"
+    tw_token: "599302075-XWKaoTNF6bhXcxUdexlPSqfsUMmjCmOJdOKrrjPz"
+    tw_secret: "0cNz52jrmqF5fljbXFFxlAetDbcmaTQdySmKvlMdQ"
