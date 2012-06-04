@@ -64,17 +64,20 @@ begin
   
   search_result.results.each do |r|
     if r.entities.urls.length > 0 and Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)      
+
       # Send vids to shelbz, for now via tweet (<140 char. duh)
+      # NOTE: eventually this should be done via the Shelby API
       begin
-        #tw_client.statuses.retweet!(:id => r.id) if r.entities.urls.length > 0
+        tw_client.statuses.retweet!(:id => r.id) if r.entities.urls.length > 0
       rescue => e
         puts "[#{Time.now}] [#{search_term.swapcase} GRACKLE ERROR]: #{e}"
       end
       
-      
       puts r.entities.urls.first.expanded_url
       
       sleep 0.5
+    else
+      puts "no supported video"
     end
   end
 rescue => e
