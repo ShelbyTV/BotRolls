@@ -62,3 +62,8 @@ defaults:
     twitter_username: "syria_video"
     tw_token: "599302075-XWKaoTNF6bhXcxUdexlPSqfsUMmjCmOJdOKrrjPz"
     tw_secret: "0cNz52jrmqF5fljbXFFxlAetDbcmaTQdySmKvlMdQ"
+  nowplaying:
+    search_term: "#nowplaying"
+    twitter_username: "MusicHashTagVid"
+    tw_token: "599480155-5SjCN6Mf5arZnobb6ykF7jXpta4m34oHE9qULI"
+    tw_secret: "tUz9CUqZMlqkXdncmV5kH2Zo5BeAhkY4rCl4V0RyIM"

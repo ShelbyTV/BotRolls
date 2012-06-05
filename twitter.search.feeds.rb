@@ -19,12 +19,12 @@ config = YAML.load( File.read("feeds.yml") )
 ###########################################
 # the twitter seach term:
 
-search_term = URI.escape(ARGV[0])
+search_term = URI.escape(ARGV[0] + " filter:links")
 rpp = ARGV[1].to_i || 20
 
 search_client = Grackle::Client.new
 
-service_config = config["defaults"][search_term]
+service_config = config["defaults"][ARGV[0]]
 (puts "invalid service"; exit) unless service_config
 
 search_term = service_config["search_term"]
@@ -77,6 +77,7 @@ begin
       
       sleep 0.5
     else
+      #puts r.text
       print "."
     end
   end
