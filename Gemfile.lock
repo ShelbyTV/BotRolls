@@ -5,8 +5,13 @@ GEM
       json
       mime-types
       oauth
+    httparty (0.8.3)
+      multi_json (~> 1.0)
+      multi_xml
     json (1.7.3)
     mime-types (1.18)
+    multi_json (1.3.4)
+    multi_xml (0.4.4)
     nokogiri (1.5.2)
     oauth (0.4.6)
     redis (2.2.2)
@@ -16,5 +21,6 @@ PLATFORMS
 
 DEPENDENCIES
   grackle
+  httparty
   nokogiri
   redis

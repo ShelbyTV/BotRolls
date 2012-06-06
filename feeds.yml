@@ -77,6 +77,7 @@ defaults:
   nowplaying:
     search_term: "#nowplaying"
     twitter_username: "MusicHashTagVid"
+    shelby_auth_token: "LPGA9okEFwzGGfvt4EEH"
     roll_id: "4fcd0ca888ba6b07e30001d7"
     tw_token: "599480155-5SjCN6Mf5arZnobb6ykF7jXpta4m34oHE9qULI"
     tw_secret: "tUz9CUqZMlqkXdncmV5kH2Zo5BeAhkY4rCl4V0RyIM"
