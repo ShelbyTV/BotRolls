@@ -8,12 +8,12 @@ require "open-uri"
 require "yaml"
 require "json"
 
-load 'embedly_regexes.rb'
+load '/home/nos/MacawFeed/embedly_regexes.rb'
 
 ###########################################
 # Loading the config file w urls/search terms/twitter acct info 
-#config = YAML.load( File.read("/home/gt/utils/VideoFeedRss/feeds.yml") )
-config = YAML.load( File.read("feeds.yml") )
+config = YAML.load( File.read("/home/nos/MacawFeed/feeds.yml") )
+#config = YAML.load( File.read("feeds.yml") )
 
 
 ###########################################
@@ -69,7 +69,7 @@ redis.set redis_key, search_result.max_id
 
 begin
   # this loops through all of the tweets since last sweep
-  while search_result.results.length > 0 and page < 30 # lit on page is just trying to limit time it takes to run this
+  while search_result.results.length > 0 and page < 5 # lit on page is just trying to limit time it takes to run this
   
     search_result.results.each do |r|
       if r.entities.urls.length > 0 and Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)      
