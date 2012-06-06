@@ -9,15 +9,15 @@ require "open-uri"
 require "yaml"
 require "json"
 
-#load '/home/nos/MacawFeed/embedly_regexes.rb'
-#load '/home/nos/MacawFeed/shelby_api.rb'
-load 'embedly_regexes.rb'
-load 'shelby_api.rb'
+load '/home/nos/MacawFeed/embedly_regexes.rb'
+load '/home/nos/MacawFeed/shelby_api.rb'
+#load 'embedly_regexes.rb'
+#load 'shelby_api.rb'
 
 ###########################################
 # Loading the config file w urls/search terms/twitter acct info 
-#config = YAML.load( File.read("/home/nos/MacawFeed/feeds.yml") )
-config = YAML.load( File.read("feeds.yml") )
+config = YAML.load( File.read("/home/nos/MacawFeed/feeds.yml") )
+#config = YAML.load( File.read("feeds.yml") )
 
 
 ###########################################
@@ -77,16 +77,15 @@ redis.set redis_key, search_result.max_id
 
 begin
   # this loops through all of the tweets since last sweep
-  while search_result.results.length > 0 and page < 5 # lit on page is just trying to limit time it takes to run this
-    puts "page #{page}:"
+  #   limit on page is just trying to limit # vids passed through for now
+  while search_result.results.length > 0 and page < 5 
     search_result.results.each do |r|
       r.entities.urls.each do |u|
         if Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)      
-          # Send vids to shelbz via shelby api
           begin
+            # Send vids to shelbz via shelby api
             # some tweets have multiple urls
             r = Shelby::API.create_frame(shelby_roll_id, shelby_token, u.expanded_url, r.text)
-            puts r.parsed_response
           rescue => e
             puts "[#{Time.now}] [#{search_term.swapcase} GRACKLE ERROR]: #{e}"
           end
