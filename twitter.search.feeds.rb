@@ -85,7 +85,8 @@ begin
           begin
             # Send vids to shelbz via shelby api
             # some tweets have multiple urls
-            r = Shelby::API.create_frame(shelby_roll_id, shelby_token, u.expanded_url, r.text)
+            msg = "HT @#{r.from_user}: #{r.text}"
+            r = Shelby::API.create_frame(shelby_roll_id, shelby_token, u.expanded_url, msg)
           rescue => e
             puts "[#{Time.now}] [#{search_term.swapcase} GRACKLE ERROR]: #{e}"
           end
