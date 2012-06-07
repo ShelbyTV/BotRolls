@@ -14,11 +14,11 @@ When video is added via the Shelby API, the roll id (where the video is being ad
 
 rss.feeds.rb and twitter.search.feeds.rb are run via cron jobs at various frequencies depending on what type of content is being gotten.
 
-= rss.feeds.rb takes one argument: the feed name being retrieved, e.g. surfing_roll
+rss.feeds.rb takes one argument: the feed name being retrieved, e.g. surfing_roll
 
 ex: ruby rss.feeds.rb surfing_roll
 
-= twitter.search.feeds.rb takes two arguments:
+twitter.search.feeds.rb takes two arguments:
 - the search term name being retrieved, e.g. nowplaying (the actual search term is gotten in the feeds.yml file)
 - the number of results requested per page form the twitter search api (OPTIONAL, default is 20)
 	
