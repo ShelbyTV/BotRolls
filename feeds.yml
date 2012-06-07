@@ -71,6 +71,7 @@ defaults:
   syria:
     search_term: "#syria"
     twitter_username: "syria_video"
+    shelby_auth_token: ""
     roll_id: "4fccffc188ba6b7a82000b92"
     tw_token: "599302075-XWKaoTNF6bhXcxUdexlPSqfsUMmjCmOJdOKrrjPz"
     tw_secret: "0cNz52jrmqF5fljbXFFxlAetDbcmaTQdySmKvlMdQ"

@@ -13,9 +13,10 @@ module Shelby
     end
     
     def self.create_frame(roll_id, token, url, text, source=nil)
-      u = post("/roll/#{roll_id}/frames", :query => {
-            :auth_token => token, :url => url, :text => text, :source => source
-          })
+      u = post("/roll/#{roll_id}/frames", :query => { :auth_token => token, 
+                  :url => url, 
+                  :text => text, 
+                  :source => source })
     end
   
   end
