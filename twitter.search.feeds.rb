@@ -40,12 +40,12 @@ shelby_roll_id = service_config["roll_id"]
 token = service_config["tw_token"]
 secret = service_config["tw_secret"]
 
+=begin
 ###########################################
 # Grackle used for tweeting found videos for ingestion into shelby
 # [this is shelby's key/secret pair]
 # NOTE: eventually this should be done via the Shelby API
 (puts "must include twitter credentials"; exit) unless (token and secret)
-=begin
 consumer_key = config["defaults"]["consumer_app"]["consumer_key"]
 consumer_secret = config["defaults"]["consumer_app"]["consumer_secret"]
 tw_client = Grackle::Client.new(:auth=>{
