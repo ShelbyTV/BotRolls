@@ -9,14 +9,16 @@ require "open-uri"
 require "yaml"
 require "json"
 
-load '/home/nos/MacawFeed/embedly_regexes.rb'
-load '/home/nos/MacawFeed/shelby_api.rb'
+dir_root = "/home/nos/BotRolls/"
+
+load dir_root+'embedly_regexes.rb'
+load dir_root+'shelby_api.rb'
 #load 'embedly_regexes.rb'
 #load 'shelby_api.rb'
 
 ###########################################
 # Loading the config file w urls/search terms/twitter acct info 
-config = YAML.load( File.read("/home/nos/MacawFeed/feeds.yml") )
+config = YAML.load( File.read("#{dir_root}feeds.yml") )
 #config = YAML.load( File.read("feeds.yml") )
 
 
