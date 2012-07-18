@@ -5,7 +5,7 @@ require "grackle"
 require "open-uri"
 require "yaml"
 
-config = YAML.load( File.read("/home/gt/utils/VideoFeedRss/feeds.yml") )
+config = YAML.load( File.read("/home/gt/utils/BotRolls/feeds.yml") )
 
 # what type of feed is this process pulling in, e.g. "espn", "tedx"
 service = ARGV[0]
