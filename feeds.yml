@@ -87,3 +87,9 @@ defaults:
     twitter_username: "funny_video"
     shelby_auth_token: "AWxmwZS5oYSXg5jQWSws"
     roll_id: "4f95a16a9a725b0a8c023904"
+  movieclips:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/movieclips/uploads?alt=rss&v=2&orderby=published"
+    twitter_username: "MovieClipsTV"
+    roll_id: "5006b9fcb415cc13430030bc"
+    tw_token: "703045189-eruWJuCWKe9KYiHDcq3oc9lNvptwMYdW6niH9X37"
+    tw_secret: "NbVML8KJjYVb1HnHI645sKTrKa6cNVbsiEIDCcm8kQ"
