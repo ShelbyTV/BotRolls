@@ -7,6 +7,7 @@ require "yaml"
 require "httparty"
 require "json"
 
+dir_root = "/home/gt/BotRolls/"
 load dir_root+'shelby_api.rb'
 
 config = YAML.load( File.read("/home/gt/utils/BotRolls/feeds.yml") )

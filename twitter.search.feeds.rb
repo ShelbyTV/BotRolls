@@ -9,7 +9,7 @@ require "open-uri"
 require "yaml"
 require "json"
 
-dir_root = "/home/nos/BotRolls/"
+dir_root = "/home/gt/utils/BotRolls/"
 
 load dir_root+'embedly_regexes.rb'
 load dir_root+'shelby_api.rb'
