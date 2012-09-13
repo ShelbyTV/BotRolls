@@ -94,7 +94,7 @@ defaults:
     tw_token: "703045189-eruWJuCWKe9KYiHDcq3oc9lNvptwMYdW6niH9X37"
     tw_secret: "NbVML8KJjYVb1HnHI645sKTrKa6cNVbsiEIDCcm8kQ"
   nytimesvideo:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/nytimes/uploads?alt=rss&v=2&orderby=published"
+    feed_url: "http://gdata.youtube.com/feeds/base/users/thenewyorktimes/uploads?alt=rss&v=2&orderby=published"
     twitter_username: "nytimesvideo"
     roll_id: "50522466b415cc5b81002080"
     shelby_auth_token: "hayzq8yzgY8CTQT3xELv"
