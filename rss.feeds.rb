@@ -4,6 +4,10 @@ require "nokogiri"
 require "grackle"
 require "open-uri"
 require "yaml"
+require "httparty"
+require "json"
+
+load dir_root+'shelby_api.rb'
 
 config = YAML.load( File.read("/home/gt/utils/BotRolls/feeds.yml") )
 
@@ -16,18 +20,22 @@ service_config = config["defaults"][service]
 feed_url = service_config["feed_url"]
 token = service_config["tw_token"]
 secret = service_config["tw_secret"]
+shelby_token = service_config["shelby_auth_token"]
+shelby_roll_id = service_config["roll_id"]
+
 
 # Grackle used for tweeting found videos for ingestion into shelby
 # [this is shelby's key/secret pair]
-(puts "must include twitter credentials"; exit) unless (token and secret)
-consumer_key = config["defaults"]["consumer_app"]["consumer_key"]
-consumer_secret = config["defaults"]["consumer_app"]["consumer_secret"]
-tw_client = Grackle::Client.new(:auth=>{
-  :type =>:oauth,
-  :consumer_key => consumer_key, :consumer_secret => consumer_secret,
-  :token => token,
-  :token_secret => secret
-})
+if (token and secret)
+  consumer_key = config["defaults"]["consumer_app"]["consumer_key"]
+  consumer_secret = config["defaults"]["consumer_app"]["consumer_secret"]
+  tw_client = Grackle::Client.new(:auth=>{
+    :type =>:oauth,
+    :consumer_key => consumer_key, :consumer_secret => consumer_secret,
+    :token => token,
+    :token_secret => secret
+  })
+end
 
 # Redis used for persisting last know video
 redis = Redis.new
@@ -50,7 +58,11 @@ begin
 
       # Send vids to shelbz, for now via tweet (<140 char. duh)
       tweet = "#{vid['title'][0..90]}... #{vid['link']}"
-      tw_client.statuses.update! :status=> tweet
+      if token and secret
+        tw_client.statuses.update! :status=> tweet
+      elsif shelby_roll_id and shelby_token
+        r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], tweet)
+      end
       puts tweet
       sleep 1
     end
