@@ -89,6 +89,7 @@ begin
             # some tweets have multiple urls
             msg = "HT @#{r.from_user}: #{r.text}"
             r = Shelby::API.create_frame(shelby_roll_id, shelby_token, u.expanded_url, msg)
+            puts "[ #{r['status']} ] #{msg}"
           rescue => e
             puts "[#{Time.now}] [#{search_term.swapcase} GRACKLE ERROR]: #{e}"
           end
