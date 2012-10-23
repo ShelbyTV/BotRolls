@@ -98,3 +98,7 @@ defaults:
     twitter_username: "nytimesvideo"
     roll_id: "50522466b415cc5b81002080"
     shelby_auth_token: "hayzq8yzgY8CTQT3xELv"
+  thedailyshow:
+    feed_url: "http://www.hulu.com/feed/show/902/videos"
+    roll_id: "5086f793b415cc04730033fb"
+    shelby_auth_token: "ptxqrDsQxrYV2xoq5s7G"
