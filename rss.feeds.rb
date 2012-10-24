@@ -42,16 +42,16 @@ end
 redis = Redis.new
 redis_key = "last_#{service}_video_time"
 
-# getting pubDate of last known video in feed
-last_old_video_time = redis.get redis_key
-
 # This is the rss feed with the feeds latest videos
 feed = Nokogiri::XML(open(feed_url))
 
 begin
+  # getting pubDate of last known video in feed
+  last_old_video_time = Time.parse(redis.get redis_key)
+  
   first_new_video_time = feed.xpath('//channel/item').first.xpath('pubDate').inner_text
   feed.xpath('//channel/item').reverse.each do |i|
-    break if last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) > Time.parse(last_old_video_time)
+    break if last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) > last_old_video_time
     
     vid = { "title" => i.xpath('title').inner_text,
             "link" => i.xpath('link').inner_text,
