@@ -49,16 +49,17 @@ last_old_video_time = redis.get redis_key
 feed = Nokogiri::XML(open(feed_url))
 
 begin
-  first_new_video_time = feed.xpath('//channel/item').last.xpath('pubDate').inner_text
+  first_new_video_time = feed.xpath('//channel/item').first.xpath('pubDate').inner_text
   if last_old_video_time != first_new_video_time
     feed.xpath('//channel/item').reverse.each do |i|
-      break if i.xpath('pubDate').inner_text == last_old_video_time
+      break if last_old_video_time.is_a?(Date) and Date.parse(i.xpath('pubDate').inner_text) > last_old_video_time
+      
       vid = { "title" => i.xpath('title').inner_text,
               "link" => i.xpath('link').inner_text,
               "pubDate" => i.xpath('pubDate').inner_text }
 
-      # Send vids to shelbz, for now via tweet (<140 char. duh)
-      tweet = "#{vid['title'][0..90]}}"
+      # Send vids to shelbz
+      tweet = "#{vid['title'][0..90]}"
       if token and secret
         tw_client.statuses.update! :status=> tweet
       elsif shelby_roll_id and shelby_token
