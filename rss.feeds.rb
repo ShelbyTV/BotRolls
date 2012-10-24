@@ -51,7 +51,7 @@ feed = Nokogiri::XML(open(feed_url))
 begin
   first_new_video_time = feed.xpath('//channel/item').first.xpath('pubDate').inner_text
   feed.xpath('//channel/item').reverse.each do |i|
-    break if last_old_video_time.is_a?(Date) and Date.parse(i.xpath('pubDate').inner_text) < last_old_video_time
+    break if last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) < Time.parse(last_old_video_time)
     
     vid = { "title" => i.xpath('title').inner_text,
             "link" => i.xpath('link').inner_text,
