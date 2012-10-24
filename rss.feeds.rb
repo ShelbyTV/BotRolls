@@ -59,7 +59,7 @@ begin
               "pubDate" => i.xpath('pubDate').inner_text }
 
       # Send vids to shelbz
-      tweet = "#{vid['title'][0..90]}"
+      tweet = "#{vid['title'][0..90]}... #{i.xpath('link').inner_text}"
       if token and secret
         tw_client.statuses.update! :status=> tweet
       elsif shelby_roll_id and shelby_token
