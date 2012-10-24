@@ -50,26 +50,24 @@ feed = Nokogiri::XML(open(feed_url))
 
 begin
   first_new_video_time = feed.xpath('//channel/item').first.xpath('pubDate').inner_text
-  if last_old_video_time != first_new_video_time
-    feed.xpath('//channel/item').reverse.each do |i|
-      break if last_old_video_time.is_a?(Date) and Date.parse(i.xpath('pubDate').inner_text) > last_old_video_time
-      
-      vid = { "title" => i.xpath('title').inner_text,
-              "link" => i.xpath('link').inner_text,
-              "pubDate" => i.xpath('pubDate').inner_text }
+  feed.xpath('//channel/item').reverse.each do |i|
+    break if last_old_video_time.is_a?(Date) and Date.parse(i.xpath('pubDate').inner_text) < last_old_video_time
+    
+    vid = { "title" => i.xpath('title').inner_text,
+            "link" => i.xpath('link').inner_text,
+            "pubDate" => i.xpath('pubDate').inner_text }
 
-      # Send vids to shelbz
-      tweet = "#{vid['title'][0..90]}... #{i.xpath('link').inner_text}"
-      if token and secret
-        tw_client.statuses.update! :status=> tweet
-      elsif shelby_roll_id and shelby_token
-        r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], tweet)
-      end
-      puts tweet
-      sleep 1
+    # Send vids to shelbz
+    tweet = "#{vid['title'][0..90]}... #{i.xpath('link').inner_text}"
+    if token and secret
+      tw_client.statuses.update! :status=> tweet
+    elsif shelby_roll_id and shelby_token
+      r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], tweet)
     end
-    redis.set redis_key, first_new_video_time
+    puts tweet
+    sleep 1
   end
+  redis.set redis_key, first_new_video_time
 rescue => e
   puts "[#{Time.now}] [#{service.swapcase} VIDEO FEED ERROR]: #{e}"
 end
