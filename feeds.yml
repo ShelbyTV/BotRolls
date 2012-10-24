@@ -102,3 +102,7 @@ defaults:
     feed_url: "http://www.hulu.com/feed/show/902/videos"
     roll_id: "5086f793b415cc04730033fb"
     shelby_auth_token: "ptxqrDsQxrYV2xoq5s7G"
+  thecolbertreport:
+    feed_url: "http://www.hulu.com/feed/show/903/videos"
+    roll_id: ""
+    shelby_auth_token: ""
