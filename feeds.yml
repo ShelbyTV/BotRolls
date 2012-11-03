@@ -94,3 +94,7 @@ defaults:
     feed_url: "http://gdata.youtube.com/feeds/base/users/AboveAverageNetwork/uploads?alt=rss&v=2&orderby=published"
     roll_id: "50951b06b415cc567800aa16"
     shelby_auth_token: "BUZ1chWBPE5XL3dUpR4M"
+  elections2012:
+    search_term: "#election2012 OR obama OR romney"
+    shelby_auth_token: "FLCa6xG6uzTZgg2YqfpH"
+    roll_id: "509559ddb415cc03c50115ab"
