@@ -80,7 +80,7 @@ redis.set redis_key, search_result.max_id
 begin
   # this loops through all of the tweets since last sweep
   #   limit on page is just trying to limit # vids passed through for now
-  while search_result.results.length > 0 and page < 5 
+  while search_result.results.length > 0 and page < 10
     search_result.results.each do |r|
       r.entities.urls.each do |u|
         if Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)      
