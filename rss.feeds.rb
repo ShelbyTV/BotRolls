@@ -32,7 +32,7 @@ feed = Nokogiri::XML(open(feed_url))
 begin
   # getting pubDate of last known video in feed
   key = redis.get redis_key
-  last_old_video_time = key == "" ? "" : Time.parse(key)
+  last_old_video_time = (key == "" or key == nil) ? "" : Time.parse(key)
   
   feed.xpath('//channel/item').reverse.each do |i|
     break if (last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) <= last_old_video_time)
