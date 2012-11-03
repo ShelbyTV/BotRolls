@@ -91,6 +91,6 @@ defaults:
     roll_id: "5087f4c5b415cc4e5401255c"
     shelby_auth_token: "gqqpTqCzbpTbRsEqEdyL"
   aboveaverage:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/aboveaverage/uploads?alt=rss&v=2&orderby=published"
+    feed_url: "http://gdata.youtube.com/feeds/base/users/AboveAverageNetwork/uploads?alt=rss&v=2&orderby=published"
     roll_id: "50951b06b415cc567800aa16"
     shelby_auth_token: "BUZ1chWBPE5XL3dUpR4M"
