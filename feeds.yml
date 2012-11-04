@@ -98,3 +98,7 @@ defaults:
     search_term: "#election2012 OR obama OR romney"
     shelby_auth_token: "FLCa6xG6uzTZgg2YqfpH"
     roll_id: "509559ddb415cc03c50115ab"
+  sandy:
+    search_term: "#sandy OR hurricane OR #sandyaid"
+    shelby_auth_token: "T7ZC8NzaxtuDXYY3ruDY"
+    roll_id: "5096790db415cc05a2006f5c"
