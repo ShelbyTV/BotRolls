@@ -35,7 +35,7 @@ begin
   last_old_video_time = (key == "" or key == nil) ? "" : Time.parse(key)
   
   feed.xpath('//channel/item').reverse.each do |i|
-    break if (last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) <= last_old_video_time)
+    next if (last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) <= last_old_video_time)
     
     vid = { "title" => i.xpath('title').inner_text,
             "link" => i.xpath('link').inner_text,
@@ -46,10 +46,10 @@ begin
     if shelby_roll_id and shelby_token
       r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], description)
     end
-    redis.set redis_key, i.xpath('pubDate').inner_text
     puts description
     sleep 1
   end
+  redis.set redis_key, i.xpath('pubDate').inner_text
 rescue => e
   puts "[#{Time.now}] [#{service.swapcase} VIDEO FEED ERROR]: #{e}"
 end
