@@ -12,8 +12,8 @@ load dir_root+'shelby_api.rb'
 load dir_root+'embedly_regexes.rb'
 
 feed_url = "http://feeds.feedburner.com/avc"
-shelby_token = 
-shelby_roll_id = 
+shelby_token = "g1nRkKhwGF4QxAwVBHyq"
+shelby_roll_id = "4f8f7fb0b415cc4762000c42"
 
 # Redis used for persisting last know post
 redis = Redis.new
@@ -29,7 +29,7 @@ begin
   feed.xpath('//item').reverse.each do |i|
     pubDate = i.xpath('pubDate').inner_text
     # dont look at this item if we have seen it before
-    break if last_old_video_time.is_a?(Time) and (Time.parse(pubDate) <= last_old_video_time)
+    next if last_old_video_time.is_a?(Time) and (Time.parse(pubDate) <= last_old_video_time)
 
     post_title = i.xpath('title').inner_text
     post_link = i.xpath('link').inner_text
@@ -41,16 +41,15 @@ begin
     urls.flatten! 
     urls.delete_if {|u| u == nil }
     
-    description = "(from a entry on avc.com) #{post_title} :: #{post_link}"
+    description = "#{post_title} (from a entry on avc.com) : #{post_link}"
     
     urls.each do |url|
       if Embedly::Regexes.video_regexes_matches?(url)
-        #r = Shelby::API.create_frame(shelby_roll_id, shelby_token, url, description)
+        r = Shelby::API.create_frame(shelby_roll_id, shelby_token, url, description)
         puts description
       end
-
-      redis.set redis_key, pubDate
     end
+    redis.set redis_key, pubDate
   end
 
 end
