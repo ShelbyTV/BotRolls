@@ -1,3 +1,4 @@
+# encoding: UTF-8
 #!/usr/bin/env ruby
 require "redis"
 require "nokogiri"
