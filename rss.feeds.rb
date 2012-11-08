@@ -47,9 +47,9 @@ begin
       r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], description)
     end
     puts description
-    sleep 1
+    redis.set redis_key, i.xpath('pubDate').inner_text
+    sleep 0.5
   end
-  redis.set redis_key, i.xpath('pubDate').inner_text
 rescue => e
   puts "[#{Time.now}] [#{service.swapcase} VIDEO FEED ERROR]: #{e}"
 end
