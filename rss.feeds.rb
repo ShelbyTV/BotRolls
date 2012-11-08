@@ -35,7 +35,7 @@ begin
   last_old_video_time = (key == "" or key == nil) ? "" : Time.parse(key)
   
   feed.xpath('//channel/item').reverse.each do |i|
-    next if (last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) <= last_old_video_time)
+    break if (last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) <= last_old_video_time)
     
     vid = { "title" => i.xpath('title').inner_text,
             "link" => i.xpath('link').inner_text,
