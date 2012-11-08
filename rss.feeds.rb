@@ -35,7 +35,7 @@ begin
   last_old_video_time = (key == "" or key == nil) ? "" : Time.parse(key)
   
   feed.xpath('//channel/item').reverse.each do |i|
-    break if (last_old_video_time.is_a?(Time) and Time.parse(i.xpath('pubDate').inner_text) <= last_old_video_time)
+    next if (last_old_video_time.is_a?(Time) and !(Time.parse(i.xpath('pubDate').inner_text) <= last_old_video_time))
     
     vid = { "title" => i.xpath('title').inner_text,
             "link" => i.xpath('link').inner_text,
@@ -44,7 +44,7 @@ begin
     # Send vids to shelbz
     description = "#{vid['title'][0..90]}... #{i.xpath('link').inner_text}"
     if shelby_roll_id and shelby_token
-      r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], description)
+      #r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], description)
     end
     puts description
     sleep 1
