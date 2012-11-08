@@ -44,7 +44,7 @@ begin
     # Send vids to shelbz
     description = "#{vid['title'][0..90]}... #{i.xpath('link').inner_text}"
     if shelby_roll_id and shelby_token
-      #r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], description)
+      r = Shelby::API.create_frame(shelby_roll_id, shelby_token, vid['link'], description)
     end
     puts description
     sleep 1
