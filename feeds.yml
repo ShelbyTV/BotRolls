@@ -102,3 +102,7 @@ defaults:
     search_term: "#sandy OR hurricane OR #sandyaid"
     shelby_auth_token: "T7ZC8NzaxtuDXYY3ruDY"
     roll_id: "5096790db415cc05a2006f5c"
+  thanksgiving:
+    search_term: "#thanksgiving"
+    shelby_auth_token: "LRTW4zxYZijshwjgMqJ3"
+    roll_id: "50a55e5cb415cc69e200d7a6"
