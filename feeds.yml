@@ -59,7 +59,7 @@ defaults:
     tw_token: "599302075-XWKaoTNF6bhXcxUdexlPSqfsUMmjCmOJdOKrrjPz"
     tw_secret: "0cNz52jrmqF5fljbXFFxlAetDbcmaTQdySmKvlMdQ"
   nowplaying:
-    search_term: "#nowplaying"
+    search_term: "#nowplaying OR #music"
     twitter_username: "MusicHashTagVid"
     shelby_auth_token: "LPGA9okEFwzGGfvt4EEH"
     roll_id: "4fcd0ca888ba6b07e30001d7"
@@ -106,3 +106,15 @@ defaults:
     search_term: "#thanksgiving"
     shelby_auth_token: "LRTW4zxYZijshwjgMqJ3"
     roll_id: "50a55e5cb415cc69e200d7a6"
+  sports:
+    search_term: "#nfl OR #nba OR #nhl OR #mlb OR #mets"
+    shelby_auth_token: "5qu1XeRQYv1tbUax61Rm"
+    roll_id: "50b62cd1b415cc4cb20039c2"
+  holidays:
+    search_term: "#holidays OR #christmas OR #chanukkah"
+    shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
+    roll_id: "50b62e2cb415cc4cb2005701"
+  fiscal_cliff:
+    search_term: "#fiscalcliff OR (Fiscal Cliff)"
+    shelby_auth_token: "ZrQuyxBx1qFU1mmh9d5C"
+    roll_id: "50b62f72b415cc0a88008cde"
