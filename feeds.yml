@@ -111,7 +111,7 @@ defaults:
     shelby_auth_token: "5qu1XeRQYv1tbUax61Rm"
     roll_id: "50b62cd1b415cc4cb20039c2"
   holidays:
-    search_term: "#holidays OR #christmas OR #chanukkah"
+    search_term: "#holidays OR #christmas OR #chanukkah OR #kwanza"
     shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
     roll_id: "50b62e2cb415cc4cb2005701"
   fiscal_cliff:
