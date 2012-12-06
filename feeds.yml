@@ -100,7 +100,7 @@ defaults:
     roll_id: "509559ddb415cc03c50115ab"
   sandy:
     search_term: "#sandy OR hurricane OR #sandyaid"
-    shelby_auth_token: "T7ZC8NzaxtuDXYY3ruDY"
+    shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
     roll_id: "5096790db415cc05a2006f5c"
   thanksgiving:
     search_term: "#thanksgiving"
@@ -108,7 +108,7 @@ defaults:
     roll_id: "50a55e5cb415cc69e200d7a6"
   sports:
     search_term: "#nfl OR #nba OR #nhl OR #mlb OR #mets"
-    shelby_auth_token: "5qu1XeRQYv1tbUax61Rm"
+    shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
     roll_id: "50b62cd1b415cc4cb20039c2"
   holidays:
     search_term: "#holidays OR #christmas OR #chanukkah OR #kwanza"
@@ -116,5 +116,5 @@ defaults:
     roll_id: "50b62e2cb415cc4cb2005701"
   fiscal_cliff:
     search_term: "#fiscalcliff OR (Fiscal Cliff)"
-    shelby_auth_token: "ZrQuyxBx1qFU1mmh9d5C"
+    shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
     roll_id: "50b62f72b415cc0a88008cde"
