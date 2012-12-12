@@ -118,3 +118,7 @@ defaults:
     search_term: "#fiscalcliff OR (Fiscal Cliff)"
     shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
     roll_id: "50b62f72b415cc0a88008cde"
+  cbsnews:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/cbsnewsonline/uploads?alt=rss&v=2&orderby=published"
+    roll_id: "50c8ecefb415cc0f4c007f21"
+    shelby_auth_token: "Vf9dQNDVcMvM4s2E8ip7"
