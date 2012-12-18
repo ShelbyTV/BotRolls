@@ -126,3 +126,7 @@ defaults:
     feed_url: "http://gdata.youtube.com/feeds/base/users/ABCNews/uploads?alt=rss&v=2&orderby=published"
     shelby_auth_token: "iHtLFt8WLYgYdXXaqLQm"
     roll_id: "50d084cbb415cc3f70033bd6"
+  ora:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/OraTVnetwork/uploads?alt=rss&v=2&orderby=published"
+    shelby_auth_token: "oPVWFsaGx4acM74dkjBv"
+    roll_id: "50d09ef2b415cc3c3c05ce85"
