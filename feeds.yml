@@ -118,7 +118,11 @@ defaults:
     search_term: "#fiscalcliff OR (Fiscal Cliff)"
     shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
     roll_id: "50b62f72b415cc0a88008cde"
-  cbsnews:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/cbsnewsonline/uploads?alt=rss&v=2&orderby=published&format=5"
-    roll_id: "50c8ecefb415cc0f4c007f21"
-    shelby_auth_token: "Vf9dQNDVcMvM4s2E8ip7"
+  aljazerra:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/AlJazeeraEnglish/uploads?alt=rss&v=2&orderby=published"
+    shelby_auth_token: "wrxFSAqY8sG7Zuotouyb"
+    roll_id: "50d083b1b415cc73fd00e89f"
+  abcnews:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/ABCNews/uploads?alt=rss&v=2&orderby=published"
+    shelby_auth_token: "iHtLFt8WLYgYdXXaqLQm"
+    roll_id: "50d084cbb415cc3f70033bd6"
