@@ -130,3 +130,7 @@ defaults:
     feed_url: "http://gdata.youtube.com/feeds/base/users/OraTVnetwork/uploads?alt=rss&v=2&orderby=published"
     shelby_auth_token: "oPVWFsaGx4acM74dkjBv"
     roll_id: "50d09ef2b415cc3c3c05ce85"
+  olympics:
+    feed_url: "http://gdata.youtube.com/feeds/base/users/olympic/uploads?alt=rss&v=2&orderby=published"
+    shelby_auth_token: "tnEaBtSssUpYJhx9dyzr"
+    roll_id: "50bf93d1d104121eff000d1e"
