@@ -116,7 +116,7 @@ defaults:
     roll_id: "50b62e2cb415cc4cb2005701"
   fiscal_cliff:
     search_term: "#fiscalcliff OR (Fiscal Cliff)"
-    shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
+    shelby_auth_token: "ZrQuyxBx1qFU1mmh9d5C"
     roll_id: "50b62f72b415cc0a88008cde"
   aljazerra:
     feed_url: "http://gdata.youtube.com/feeds/base/users/AlJazeeraEnglish/uploads?alt=rss&v=2&orderby=published"
