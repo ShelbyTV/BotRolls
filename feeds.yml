@@ -133,8 +133,8 @@ defaults:
   marchmadness:
     search_term: "#marchmadness OR marchmadness"
     shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
-    roll_id: "50f6c9abb415cc37a0049727"
+    roll_id: "50f6d51cb415cc7ebd000007"
   dunk:
     search_term: "#dunk OR dunk"
     shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
-    roll_id: "50f6c9abb415cc37a0049727"
+    roll_id: "50f6d548b415cc7ebd000009"
