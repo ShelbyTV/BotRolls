@@ -18,7 +18,7 @@ shelby_roll_id = "50fd9b11b415cc6ab503e3ce"
 
 # Redis used for persisting last know post
 redis = Redis.new
-redis_key = "last_avc_video_time"
+redis_key = "last_arbroath_video_time"
 
 feed = Nokogiri::XML(open(feed_url))
 
@@ -42,7 +42,7 @@ begin
     urls.flatten!
     urls.delete_if {|u| u == nil }
 
-    description = "#{post_title} (from a entry on avc.com) : #{post_link}"
+    description = "#{post_title} : #{post_link}"
 
     urls.each do |url|
       if Embedly::Regexes.video_regexes_matches?(url)

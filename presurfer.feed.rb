@@ -18,7 +18,7 @@ shelby_roll_id = "50fd9b11b415cc6ab503e3ce"
 
 # Redis used for persisting last know post
 redis = Redis.new
-redis_key = "last_avc_video_time"
+redis_key = "last_presurfer_video_time"
 
 feed = Nokogiri::HTML(open(feed_url))
 
