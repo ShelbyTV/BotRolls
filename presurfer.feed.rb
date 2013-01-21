@@ -12,7 +12,7 @@ dir_root = "/home/gt/utils/BotRolls/"
 load dir_root+'shelby_api.rb'
 load dir_root+'embedly_regexes.rb'
 
-feed_url = "http://feeds.feedburner.com/presurfer?alt=rss"
+feed_url = "http://presurfer.blogspot.com"
 shelby_token = "hz4FHPgpM6uXPQorKKDq"
 shelby_roll_id = "50fd9b11b415cc6ab503e3ce"
 
@@ -30,7 +30,7 @@ begin
   feed.css('.post').reverse.each do |p|
     pubDate = p.css('.published').inner_text
     # dont look at this item if we have seen it before
-    next if last_old_video_time.is_a?(Time) and (Time.parse(pubDate) <= last_old_video_time)
+    #next if last_old_video_time.is_a?(Time) and (Time.parse(pubDate) <= last_old_video_time)
 
     post_title = p.css('.post-title a').inner_text
     post_link = p.css('.timestamp-link').map { |link| link['href'] }.first
