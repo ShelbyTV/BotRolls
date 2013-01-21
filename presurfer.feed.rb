@@ -30,7 +30,7 @@ begin
   feed.css('.post').reverse.each do |p|
     pubDate = p.css('.published').inner_text
     # dont look at this item if we have seen it before
-    #next if last_old_video_time.is_a?(Time) and (Time.parse(pubDate) <= last_old_video_time)
+    next if last_old_video_time.is_a?(Time) and (Time.parse(pubDate) <= last_old_video_time)
 
     post_title = p.css('.post-title a').inner_text
     post_link = p.css('.timestamp-link').map { |link| link['href'] }.first
@@ -49,12 +49,12 @@ begin
 
       urls.each do |url|
         if Embedly::Regexes.video_regexes_matches?(url)
-          #r = Shelby::API.create_frame(shelby_roll_id, shelby_token, url, description)
+          r = Shelby::API.create_frame(shelby_roll_id, shelby_token, url, description)
           puts description
         end
       end
     end
-    #redis.set redis_key, pubDate
+    redis.set redis_key, pubDate
   end
 
 end
