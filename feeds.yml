@@ -142,3 +142,7 @@ defaults:
     feed_url: "http://gdata.youtube.com/feeds/base/users/numberphile/uploads?alt=rss&v=2&orderby=published"
     shelby_auth_token: "WeZyEmeCNxbvokVhsnhM"
     roll_id: "4fa2f2b488ba6b49a7000ae6"
+  superbowl:
+    search_term: "superbowl OR superbowl2013"
+    shelby_auth_token: "SpuDp1xDHyY15ptcsAsn"
+    roll_id: "510a8149b415cc13c8008f17"
