@@ -146,3 +146,7 @@ defaults:
     search_term: "superbowl OR superbowl2013"
     shelby_auth_token: "SpuDp1xDHyY15ptcsAsn"
     roll_id: "510a8149b415cc13c8008f17"
+  harlemshake:
+    search_term: "harlemshake OR (harlem shake)"
+    shelby_auth_token: "WCYJdAnZ8g8WVXqLZBYr"
+    roll_id: "511a79afb415cc1bfa000007"
