@@ -1,4 +1,16 @@
 #!/usr/bin/env ruby
+
+#######################################
+#
+# This script is to be used to harvest videos from a YouTube Playlist
+#  into a Shelby Roll
+#
+#  required arguments:
+#   - playlist_id
+#   - shelby_roll_id
+#   - shelby_auth_token
+#
+#######################################
 require "json"
 require "open-uri"
 require "httparty"
