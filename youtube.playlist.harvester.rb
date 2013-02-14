@@ -53,7 +53,7 @@ begin
     end
 
     @videos.reverse.each do |v|
-      print '.' if Shelby::API.create_frame(shelby_roll_id, shelby_token, v[:url], v[:description])
+      print '.' if Shelby::API.create_frame(shelby_roll_id, shelby_auth_token, v[:url], v[:description])
     end
     puts "done."
   else
