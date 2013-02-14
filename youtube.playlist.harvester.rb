@@ -26,6 +26,7 @@ shelby_auth_token = ARGV[2]
 (puts "requires playlist_id, shelby_roll_id, shelby_auth_token as input"; exit) unless (playlist_id and shelby_roll_id and shelby_auth_token)
 
 feed_url = "http://gdata.youtube.com/feeds/api/playlists/" + playlist_id
+max_results = 10
 
 begin
   # This is the rss feed with the feeds latest videos
