@@ -25,6 +25,8 @@ shelby_auth_token = ARGV[2]
 
 (puts "requires playlist_id, shelby_roll_id, shelby_auth_token as input"; exit) unless (playlist_id and shelby_roll_id and shelby_auth_token)
 
+feed_url = "http://gdata.youtube.com/feeds/api/playlists/" + playlist_id
+
 begin
   # This is the rss feed with the feeds latest videos
   if response = JSON.parse(open(feed_url+'?alt=json&max-results=1').read) and response['feed']
