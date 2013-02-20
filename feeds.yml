@@ -9,13 +9,6 @@ defaults:
     shelby_auth_token: "yNAcpgmd9xiTqasYc5WS"
     tw_token: "585920921-qt9vS6Bx4XVubfWp0h5qj29evTqm8m9VQvmnpNOn"
     tw_secret: "dhDjpyQ7NrMBxdx7KPm5YpLnicoT1FUmiRVFnCoFHZ4"
-  tedx:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/tedtalksdirector/uploads?alt=rss&v=2&orderby=published"
-    twitter_username: "TedXTalksVideo"
-    roll_id: "4fbaa51d1c1cf44b9d002f58"
-    shelby_auth_token: "M9hya7mXAc3QxhUnEsVs"
-    tw_token: "586841501-7BtXSgkMN06NjR3EFejAPkrSXTQSmNZQRZtbPNpd"
-    tw_secret: "TLSoJiZdDYOo9I9y6RRrqz3ro26cu2VxXJ2sntcdc"
   mymusicshow:
     feed_url: "http://gdata.youtube.com/feeds/base/users/MyMusicShow/uploads?alt=rss&v=2&orderby=published"
     twitter_username: "MyMusicShowVids"
@@ -70,18 +63,6 @@ defaults:
     twitter_username: "funny_video"
     shelby_auth_token: "AWxmwZS5oYSXg5jQWSws"
     roll_id: "4f95a16a9a725b0a8c023904"
-  movieclips:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/movieclips/uploads?alt=rss&v=2&orderby=published"
-    twitter_username: "MovieClipsTV"
-    roll_id: "5006b9fcb415cc13430030bc"
-    shelby_auth_token: "JW4yF72P2rsNDj7hDqCL"
-    tw_token: "703045189-eruWJuCWKe9KYiHDcq3oc9lNvptwMYdW6niH9X37"
-    tw_secret: "NbVML8KJjYVb1HnHI645sKTrKa6cNVbsiEIDCcm8kQ"
-  nytimesvideo:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/thenewyorktimes/uploads?alt=rss&v=2&orderby=published"
-    twitter_username: "nytimesvideo"
-    roll_id: "50522466b415cc5b81002080"
-    shelby_auth_token: "hayzq8yzgY8CTQT3xELv"
   thedailyshow:
     feed_url: "http://www.hulu.com/feed/show/902/videos"
     roll_id: "5086f793b415cc04730033fb"
@@ -90,10 +71,6 @@ defaults:
     feed_url: "http://www.hulu.com/feed/show/903/videos"
     roll_id: "5087f4c5b415cc4e5401255c"
     shelby_auth_token: "gqqpTqCzbpTbRsEqEdyL"
-  aboveaverage:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/AboveAverageNetwork/uploads?alt=rss&v=2&orderby=published"
-    roll_id: "50951b06b415cc567800aa16"
-    shelby_auth_token: "BUZ1chWBPE5XL3dUpR4M"
   elections2012:
     search_term: "#election2012 OR obama OR romney"
     shelby_auth_token: "FLCa6xG6uzTZgg2YqfpH"
@@ -118,18 +95,6 @@ defaults:
     search_term: "#fiscalcliff OR (Fiscal Cliff)"
     shelby_auth_token: "ZrQuyxBx1qFU1mmh9d5C"
     roll_id: "50b62f72b415cc0a88008cde"
-  aljazerra:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/AlJazeeraEnglish/uploads?alt=rss&v=2&orderby=published"
-    shelby_auth_token: "wrxFSAqY8sG7Zuotouyb"
-    roll_id: "50d083b1b415cc73fd00e89f"
-  abcnews:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/ABCNews/uploads?alt=rss&v=2&orderby=published"
-    shelby_auth_token: "iHtLFt8WLYgYdXXaqLQm"
-    roll_id: "50d084cbb415cc3f70033bd6"
-  ora:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/OraTVnetwork/uploads?alt=rss&v=2&orderby=published"
-    shelby_auth_token: "oPVWFsaGx4acM74dkjBv"
-    roll_id: "50d09ef2b415cc3c3c05ce85"
   marchmadness:
     search_term: "#marchmadness OR marchmadness"
     shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
@@ -138,10 +103,6 @@ defaults:
     search_term: "#dunk OR dunk"
     shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
     roll_id: "50f6d548b415cc7ebd000009"
-  numberphile:
-    feed_url: "http://gdata.youtube.com/feeds/base/users/numberphile/uploads?alt=rss&v=2&orderby=published"
-    shelby_auth_token: "WeZyEmeCNxbvokVhsnhM"
-    roll_id: "4fa2f2b488ba6b49a7000ae6"
   superbowl:
     search_term: "superbowl OR superbowl2013"
     shelby_auth_token: "SpuDp1xDHyY15ptcsAsn"

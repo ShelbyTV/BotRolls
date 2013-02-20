@@ -1,0 +1,33 @@
+defaults:
+  aljazerraenglish:
+    youtube_user: "AlJazeeraEnglish"
+    shelby_auth_token: "wrxFSAqY8sG7Zuotouyb"
+    roll_id: "50d083b1b415cc73fd00e89f"
+  abcnews:
+    youtube_user: "ABCNews"
+    shelby_auth_token: "iHtLFt8WLYgYdXXaqLQm"
+    roll_id: "50d084cbb415cc3f70033bd6"
+  thenewyorktimes:
+    youtube_user: "thenewyorktimes"
+    shelby_auth_token: "hayzq8yzgY8CTQT3xELv"
+    roll_id: "50522466b415cc5b81002080"
+  tedtalksdirector:
+    youtube_user: "tedtalksdirector"
+    roll_id: "4fbaa51d1c1cf44b9d002f58"
+    shelby_auth_token: "M9hya7mXAc3QxhUnEsVs"
+  aboveaveragenetwork:
+    youtube_user: "AboveAverageNetwork"
+    roll_id: "50951b06b415cc567800aa16"
+    shelby_auth_token: "BUZ1chWBPE5XL3dUpR4M"
+  numberphile:
+    youtube_user: "numberphile"
+    shelby_auth_token: "WeZyEmeCNxbvokVhsnhM"
+    roll_id: "4fa2f2b488ba6b49a7000ae6"
+  oratvnetwork:
+    youtube_user: "OraTVnetwork"
+    shelby_auth_token: "oPVWFsaGx4acM74dkjBv"
+    roll_id: "50d09ef2b415cc3c3c05ce85"
+  movieclips:
+    youtube_user: "movieclips"
+    roll_id: "5006b9fcb415cc13430030bc"
+    shelby_auth_token: "JW4yF72P2rsNDj7hDqCL"
