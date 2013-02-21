@@ -57,7 +57,7 @@ begin
   end
 
   # setting pub_date of latest video
-  if entries.first['media$group'] and entries.first['yt$uploaded']
+  if entries.first['media$group'] and entries.first['media$group']['yt$uploaded']
     redis.set(redis_key, entries.first['media$group']['yt$uploaded']['$t'])
   end
 
