@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
-require "time", "redis", "open-uri", "yaml", "json"
+require "time"
+require "redis"
+require "open-uri"
+require "yaml"
+require "json"
 
 # production root
 dir_root = "/home/gt/utils/BotRolls/"
