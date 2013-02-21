@@ -42,9 +42,9 @@ begin
 
     video = Hash.new
     video[:title] = v['title']['$t'] if v['title']
-    video[:description] = v['media$group']['media$description']['$t'] if v['media$group'] and v['media$description']
+    video[:description] = v['media$group']['media$description']['$t'] if v['media$group'] and v['media$group']['media$description']
     video[:url] = v['link'][0]['href'] if v['link']
-    video[:pub_date] = Time.parse(v['media$group']['yt$uploaded']['$t']) if v['media$group'] and v['yt$uploaded']
+    video[:pub_date] = Time.parse(v['media$group']['yt$uploaded']['$t']) if v['media$group'] and v['media$group']['yt$uploaded']
 
     #move on if we have seen this pub_date before
     next if (last_known_video_time.is_a?(Time) and (video[:pub_date] <= last_known_video_time))
