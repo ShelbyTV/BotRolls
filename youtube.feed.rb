@@ -38,7 +38,7 @@ begin
   feed = JSON.parse(open(feed_url).read)
   entries = feed["feed"]["entry"]
   entries.reverse.each do |v|
-    last_known_video_time = (pub_date_string.empty? or pub_date_string.nil?) ? "" : Time.parse(pub_date_string)
+    last_known_video_time = (pub_date_string =="" or pub_date_string.nil?) ? "" : Time.parse(pub_date_string)
 
     video = Hash.new
     video[:title] = v['title']['$t'] if v['title']
