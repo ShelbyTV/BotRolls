@@ -3,6 +3,7 @@ require "time"
 require "redis"
 require "open-uri"
 require "yaml"
+require "httparty"
 require "json"
 
 # production root
