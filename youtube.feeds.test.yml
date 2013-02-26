@@ -11,3 +11,99 @@ defaults:
     youtube_user: "OraTVnetwork"
     shelby_auth_token: "oPVWFsaGx4acM74dkjBv"
     roll_id: "50d09ef2b415cc3c3c05ce85"
+  buzzfeed:
+    youtube_user: "BuzzFeed"
+    roll_id: "4f9577c488ba6b15ec0084c7"
+    shelby_auth_token: "iRoct1GsC7RENNYzsHEX"
+  geekandsundry:
+    youtube_user: "geekandsundry"
+    roll_id: "4f907e929a725b463b0009d9"
+    shelby_auth_token: "r7gmFc13yq1VGBbNTGZX"
+  sortedfood:
+    youtube_user: "sortedfood"
+    roll_id: "4fa2750e88ba6b1edf000bc1"
+    shelby_auth_token: "oBj7pspxjRqtzCcumwD5"
+  epicmealtime:
+    youtube_user: "EpicMealTime"
+    roll_id: "4f92e08f9a725b23ec001068"
+    shelby_auth_token: "3zbeqdyxx3ksoxd1wM4C"
+  theonion:
+    youtube_user: "TheOnion"
+    roll_id: "4fc532169a725b2999000354"
+    shelby_auth_token: "PgXNJxmKi7jTpvGaAqpA"
+  schmoyoho:
+    youtube_user: "schmoyoho"
+    roll_id: "4f9865ab9a725b74720006a5"
+    shelby_auth_token: "XGpL7Ux7NCh7Pqdsb6bB"
+  machinimaprime:
+    youtube_user: "MachinimaPrime"
+    roll_id: "512d1c94b415cc5d8c000079"
+    shelby_auth_token: "xRwNeWCFqn6M2gzC3p8m"
+  pbsnewshour:
+    youtube_user: "PBSNewsHour"
+    roll_id: "512d1d4eb415cc5d8c0000af"
+    shelby_auth_token: "G9FBcVnwy59JqwoV24mB"
+  cnn:
+    youtube_user: "CNN"
+    roll_id: "4f92e08c9a725b2403000fa9"
+    shelby_auth_token: "xGK1LqmwADt45q1eHxZx"
+  associatedpress:
+    youtube_user: "AssociatedPress"
+    roll_id: "512d1dafb415cc5d8c0000df"
+    shelby_auth_token: "wTGu8cxJ1ZjbVw9VMNqD"
+  cnnmoney:
+    youtube_user: "CNNMoney"
+    roll_id: "512d1dfeb415cc5d8c00010f"
+    shelby_auth_token: "7h4vSdhswz59Jr1GNxxU"
+  theverge:
+    youtube_user: "TheVerge"
+    roll_id: "4fa1591f88ba6b78da0008b7"
+    shelby_auth_token: "d3zqgChCBYRatYV71jRD"
+  pbsideachannel:
+    youtube_user: "pbsideachannel"
+    roll_id: "4faabca99a725b5cd50026a2"
+    shelby_auth_token: "EKqhVCJu4AqTZzJ7G4qy"
+  pbsoffbook:
+    youtube_user: "PBSOffbook"
+    roll_id: "4fa1b0e488ba6b4c5a000956"
+    shelby_auth_token: "LjLWqVy85VD486zPDsB5"
+  novaonline:
+    youtube_user: "NOVAonline"
+    roll_id: "512d1e55b415cc5d8c00013f"
+    shelby_auth_token: "xcjT1J1gq3Zh1EJkqpzc"
+  truthorfail:
+    youtube_user: "truthorfail"
+    roll_id: "512d1e98b415cc5d8c00016f"
+    shelby_auth_token: "gXhbi7gquJvMbucxRTYi"
+  crashcourse:
+    youtube_user: "crashcourse"
+    roll_id: "4f95f29f88ba6b72c2004aed"
+    shelby_auth_token: "AEij7hxBuDt4Jtp6F6s3"
+  nationalgeographic:
+    youtube_user: "NationalGeographic"
+    roll_id: "512d1ed5b415cc5d8c00019f"
+    shelby_auth_token: "geGL3kSqg85S2LkQzmPr"
+  motherboard:
+    youtube_user: "motherboard"
+    roll_id: "4fa84d2a88ba6b54c400078b"
+    shelby_auth_token: "h5tgy7GyEyoPUhKZniiq"
+  drive:
+    youtube_user: "drive"
+    roll_id: "4f99e5069a725b1c7501c038"
+    shelby_auth_token: "fRsQcjb6c2863yY9Gxqp"
+  tetongravityresearch:
+    youtube_user: "tetongravityresearch"
+    roll_id: "512d1f15b415cc5d8c0001cf"
+    shelby_auth_token: "yR3Qpp7hoaBxxTzMHcwr"
+  pitchforktv:
+    youtube_user: "pitchforktv"
+    roll_id: "4fa3e6309a725b3689001792"
+    shelby_auth_token: "yVqyF4tWg7WX21SAeiMr"
+  noisey:
+    youtube_user: "noisey"
+    roll_id: "4f95696a88ba6b0bb70056c7"
+    shelby_auth_token: "yJes8Fy8xz6cxnhk4qXx"
+  fuse:
+    youtube_user: "fuse"
+    roll_id: "4f908c9b9a725b4617002943"
+    shelby_auth_token: "ysEQhUpswPqjW4HYM2pc"
