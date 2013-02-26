@@ -6,14 +6,17 @@ require "yaml"
 require "httparty"
 require "json"
 
-# root working dir
-dir_root = ARGV[1] == "dev" ? '' : "/home/gt/utils/BotRolls/"
-load dir_root+'shelby_api.rb'
-
-config = YAML.load( File.read(dir_root+"youtube.feeds.yml") )
 
 # what type of feed is this process pulling in, e.g. "espn", "tedx"
 username = ARGV[0]
+
+# root working dir
+dir_root = ARGV[2] == "dev" ? '' : "/home/gt/utils/BotRolls/"
+load dir_root+'shelby_api.rb'
+
+# name of yml config file
+filename = ARGV[1]
+config = YAML.load( File.read(dir_root+filename) )
 
 service_config = config["defaults"][username]
 (puts "invalid youtube account"; exit) unless service_config
