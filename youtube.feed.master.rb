@@ -21,7 +21,7 @@ config = YAML.load( File.read(dir+filename) )
 feeds = config["defaults"].keys
 
 feeds.each do |feed|
-    process = ['ruby youtube.feed.rb', feed, filename, ARGV[1].to_s].join(' ')
+    process = ['ruby',dir,'youtube.feed.rb', feed, filename, ARGV[1].to_s].join(' ')
     pid = Process.spawn(process)
     begin
         Timeout.timeout(120) do
