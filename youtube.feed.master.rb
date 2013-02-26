@@ -1,44 +1,27 @@
 #!/usr/bin/env ruby
 
-#
-# HOW TO USE GOES HERE
-#
+#################################################
+# Master process that spawns youtube feed parsers for every #
+# account listed in the youtube.feeds.yml config file.              #
+#                                                                                              #
+# USAGE: ruby youtube.feed.master.rb  <yml file name>        #
+#                                                                                              #
+#################################################
 
 require 'timeout'
 require 'yaml'
 require 'net/smtp'
 
-#dir = '/home/gt/utils/BotRolls/'
-dir = ''
+# name of yml config file
+filename = ARGV[0]
+dir = ARGV[1] == "dev" ? '' : '/home/gt/utils/BotRolls/'
 
-config = YAML.load( File.read(dir+"youtube.feeds.yml") )
+config = YAML.load( File.read(dir+filename) )
 
 feeds = config["defaults"].keys
 
-def send_email(opts={})
-    opts[:server]      ||= 'localhost'
-    opts[:to]       ||= 'henry@shelby.tv'
-    opts[:from]        ||= 'botrolls@shelby.tv'
-    opts[:from_alias]  ||= 'BotRolls'
-    opts[:subject]     ||= "[Error: youtube.feed.master.rb]"
-    opts[:body]        ||= "Important stuff!"
-
-    msg = <<END_OF_MESSAGE
-From: #{opts[:from_alias]} <#{opts[:from]}>
-To: <#{opts[:to]}>
-Subject: #{opts[:subject]}
-
-#{opts[:body]}
-END_OF_MESSAGE
-
-    Net::SMTP.start(opts[:server]) do |smtp|
-       smtp.send_message msg, opts[:from], opts[:to]
-    end
-end
-
 feeds.each do |feed|
-    pid = Process.spawn('ruby youtube.feed.rb '+feed)
-
+    pid = Process.spawn('ruby youtube.feed.rb '+feed+' '+ARGV[1].to_s)
     begin
         Timeout.timeout(120) do
             Process.wait pid

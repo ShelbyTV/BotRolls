@@ -6,10 +6,8 @@ require "yaml"
 require "httparty"
 require "json"
 
-# production root
-#dir_root = "/home/gt/utils/BotRolls/"
-# local root
-dir_root = ''
+# root working dir
+dir_root = ARGV[1] == "dev" ? '' : "/home/gt/utils/BotRolls/"
 load dir_root+'shelby_api.rb'
 
 config = YAML.load( File.read(dir_root+"youtube.feeds.yml") )
