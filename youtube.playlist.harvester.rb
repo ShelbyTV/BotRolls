@@ -40,7 +40,7 @@ begin
 
       playlist_url = feed_url+'?alt=json&start-index='+start_index.to_s+'&max-results='+max_results.to_s
       puts "getting: #{start_index} - #{start_index+max_results + 1}"
-      if r = JSON.parse(open(playlist_url).read) and r['feed']
+      if r = JSON.parse(open(playlist_url).read) and r['feed'] and r['feed']['entry']
         r['feed']['entry'].each do |v|
           url = v['link'][0]["href"]
           description = v['yt$description']["$t"]
