@@ -43,7 +43,7 @@ begin
       if r = JSON.parse(open(playlist_url).read) and r['feed'] and r['feed']['entry']
         r['feed']['entry'].each do |v|
           url = v['link'][0]["href"]
-          description = v['yt$description']["$t"]
+          description = v['yt$description']["$t"] if v['yt$description']
           @videos << {:url => url, :description => description}
         end
       else

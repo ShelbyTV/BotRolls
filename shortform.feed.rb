@@ -1,9 +1,7 @@
 # encoding: UTF-8
 #!/usr/bin/env ruby
 require "redis"
-require "nokogiri"
 require "open-uri"
-require "yaml"
 require "httparty"
 require "json"
 
@@ -12,29 +10,33 @@ dir_root = "/home/gt/utils/BotRolls/"
 load dir_root+'shelby_api.rb'
 load dir_root+'embedly_regexes.rb'
 
-feed_url = "http://feeds.feedburner.com/avc"
-shelby_token = "g1nRkKhwGF4QxAwVBHyq"
-shelby_roll_id = "4f8f7fb0b415cc4762000c42"
+
+
+feed_url = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://feeds.feedburner.com/shortformblog/feed"
+shelby_token = "thassmSssm2zAM9yNRmy"
+shelby_roll_id = "51131dacb415cc1ded14408d"
 
 # Redis used for persisting last know post
 redis = Redis.new
-redis_key = "last_avc_video_time"
-
-feed = Nokogiri::XML(open(feed_url))
+redis_key = "last_shortformblog_video_time"
 
 begin
   # getting pubDate of last known post in feed
   key = redis.get redis_key
   last_old_video_time = (key == "" or key == nil) ? "" : Time.parse(key)
 
-  feed.xpath('//item').reverse.each do |i|
-    pubDate = i.xpath('pubDate').inner_text
+  feed = JSON.parse(open(feed_url).read)
+  entries = feed["responseData"]["feed"]["entries"]
+
+  entries.reverse.each do |v|
+    pubDate = v['publishedDate']
+
     # dont look at this item if we have seen it before
     next if last_old_video_time.is_a?(Time) and (Time.parse(pubDate) <= last_old_video_time)
 
-    post_title = i.xpath('title').inner_text
-    post_link = i.xpath('link').inner_text
-    post_content = i.content
+    post_title = v['title']
+    post_link = v['link']
+    post_content = v['content']
 
     # scan the post for urls
     urls = post_content.scan(/(?i)\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/)
@@ -42,7 +44,7 @@ begin
     urls.flatten!
     urls.delete_if {|u| u == nil }
 
-    description = "#{post_title} (from an entry on avc.com) : #{post_link}"
+    description = "#{post_title} : #{post_link}"
 
     urls.each do |url|
       if Embedly::Regexes.video_regexes_matches?(url)
@@ -52,5 +54,6 @@ begin
     end
     redis.set redis_key, pubDate
   end
-
+rescue => e
+  puts "[ Shortformblog FEED ERROR ] #{e}"
 end
