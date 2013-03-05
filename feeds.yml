@@ -111,3 +111,7 @@ defaults:
     search_term: "harlemshake OR (harlem shake)"
     shelby_auth_token: "WCYJdAnZ8g8WVXqLZBYr"
     roll_id: "511a79afb415cc1bfa000007"
+  sxsw:
+    search_term: "sxsx OR sxswi OR sxswmusic OR sxswfilm OR sxsw2013"
+    roll_id: "50f6d18db415cc6a36010eed"
+    shelby_auth_token: "FEXr3ie2rP3sxskpptHK"
