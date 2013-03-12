@@ -17,7 +17,7 @@ load dir_root+'shelby_api.rb'
 #load 'shelby_api.rb'
 
 ###########################################
-# Loading the config file w urls/search terms/twitter acct info 
+# Loading the config file w urls/search terms/twitter acct info
 config = YAML.load( File.read("#{dir_root}feeds.yml") )
 #config = YAML.load( File.read("feeds.yml") )
 
@@ -37,25 +37,6 @@ search_term = service_config["search_term"]
 shelby_token = service_config["shelby_auth_token"]
 shelby_roll_id = service_config["roll_id"]
 
-token = service_config["tw_token"]
-secret = service_config["tw_secret"]
-
-=begin
-###########################################
-# Grackle used for tweeting found videos for ingestion into shelby
-# [this is shelby's key/secret pair]
-# NOTE: eventually this should be done via the Shelby API
-(puts "must include twitter credentials"; exit) unless (token and secret)
-consumer_key = config["defaults"]["consumer_app"]["consumer_key"]
-consumer_secret = config["defaults"]["consumer_app"]["consumer_secret"]
-tw_client = Grackle::Client.new(:auth=>{
-  :type =>:oauth,
-  :consumer_key => consumer_key, :consumer_secret => consumer_secret,
-  :token => token,
-  :token_secret => secret
-})
-=end
-
 ###########################################
 # Redis used for persisting last know video
 redis = Redis.new
@@ -68,9 +49,9 @@ last_old_video_id = redis.get redis_key
 
 # do twitter search:
 page = 1
-search_result = search_client[:search].search? :q => search_term, 
-                    :include_entities => true, 
-                    :rpp => rpp, 
+search_result = search_client[:search].search? :q => search_term,
+                    :include_entities => true,
+                    :rpp => rpp,
                     :since_id => last_old_video_id,
                     :page => page
 
@@ -83,7 +64,7 @@ begin
   while search_result.results.length > 0 and page < 10
     search_result.results.each do |r|
       r.entities.urls.each do |u|
-        if Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)      
+        if Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)
           begin
             # Send vids to shelbz via shelby api
             # some tweets have multiple urls
@@ -97,16 +78,16 @@ begin
         end
       end
     end
-    
+
     page += 1
-        
-    search_result = search_client[:search].search? :q => search_term, 
-                        :include_entities => true, 
-                        :rpp => rpp, 
+
+    search_result = search_client[:search].search? :q => search_term,
+                        :include_entities => true,
+                        :rpp => rpp,
                         :since_id => last_old_video_id,
                         :page => page
   end
-  
+
 rescue => e
   puts "[#{Time.now}] [#{search_term.swapcase} ERROR]: #{e}"
 end

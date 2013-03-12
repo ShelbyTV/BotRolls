@@ -97,12 +97,12 @@ defaults:
     roll_id: "50b62f72b415cc0a88008cde"
   marchmadness:
     search_term: "#marchmadness OR marchmadness"
-    shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
+    shelby_auth_token: "FGYKK5tFhwDFotQ8Askp"
     roll_id: "50f6d51cb415cc7ebd000007"
   dunk:
-    search_term: "#dunk OR dunk"
-    shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
-    roll_id: "50f6d548b415cc7ebd000009"
+    search_term: "#sweetestbracket"
+    shelby_auth_token: "FGYKK5tFhwDFotQ8Askp"
+    roll_id: "513f8019b415cc3b3900000d"
   superbowl:
     search_term: "superbowl OR superbowl2013"
     shelby_auth_token: "SpuDp1xDHyY15ptcsAsn"
