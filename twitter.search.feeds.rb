@@ -33,7 +33,7 @@ search_client = Grackle::Client.new
 service_config = config["defaults"][ARGV[0]]
 (puts "invalid service"; exit) unless service_config
 
-search_term = service_config["search_term"]
+search_term = URI.escape(service_config["search_term"] + " filter:links")
 shelby_token = service_config["shelby_auth_token"]
 shelby_roll_id = service_config["roll_id"]
 
