@@ -12,7 +12,7 @@ defaults:
     shelby_auth_token: "oPVWFsaGx4acM74dkjBv"
     roll_id: "50d09ef2b415cc3c3c05ce85"
   buzzfeed:
-    youtube_user: "BuzzFeed"
+    youtube_user: "BuzzFeedVideo"
     roll_id: "4f9577c488ba6b15ec0084c7"
     shelby_auth_token: "iRoct1GsC7RENNYzsHEX"
   geekandsundry:
