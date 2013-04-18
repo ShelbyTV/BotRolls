@@ -115,3 +115,7 @@ defaults:
     youtube_user: "vice"
     roll_id: "4f907a9b9a725b46010005c7"
     shelby_auth_token: "PDopVoLvCAdGZp1urNsw"
+  reservechannel:
+    youtube_user: "reservechannel"
+    roll_id: "5005b00e9a725b0e150178fa"
+    shelby_auth_token: "GQ97EufTcPjRYChVkeJq"
