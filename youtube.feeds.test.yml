@@ -107,3 +107,11 @@ defaults:
     youtube_user: "fuse"
     roll_id: "4f908c9b9a725b4617002943"
     shelby_auth_token: "ysEQhUpswPqjW4HYM2pc"
+  tedtalks:
+    youtube_user: "TEDtalksDirector"
+    roll_id: "4fa054ff88ba6b09c8000e93"
+    shelby_auth_token: "f5e8mqXXrA4JNkMdA4zp"
+  vice:
+    youtube_user: "vice"
+    roll_id: "4f907a9a9a725b46010005c5"
+    shelby_auth_token: "PDopVoLvCAdGZp1urNsw"
