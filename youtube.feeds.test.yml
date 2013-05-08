@@ -119,3 +119,47 @@ defaults:
     youtube_user: "reservechannel"
     roll_id: "5005b00e9a725b0e150178fa"
     shelby_auth_token: "GQ97EufTcPjRYChVkeJq"
+  jashnetwork:
+    youtube_user: "JashNetwork"
+    roll_id: "518a6a73b415cc623a06ae14"
+    shelby_auth_token: "FtKwNqxs1DPfk2eYvSQb"
+  zefrank:
+    youtube_user: "zefrank1"
+    roll_id: "4f9704b688ba6b51200012bb"
+    shelby_auth_token: "qkoMQgjiSWVsFxqJxq98"
+  officialcomedy:
+    youtube_user: "officialcomedy"
+    roll_id: "4fbe76ff88ba6b278c00046c"
+    shelby_auth_token: "eUEEsQfLpebNtmSFaF1n"
+  kassemg:
+    youtube_user: "KassemG"
+    roll_id: "4f92e0689a725b23f2000a57"
+    shelby_auth_token: "zoHjo6gqo5zX4N2anfh8"
+  funnyordie:
+    youtube_user: "FunnyorDie"
+    roll_id: "4fd828049a725b5ead016682"
+    shelby_auth_token: "zvMQjPrdiSqGT2ycPnhR"
+  ucb:
+    youtube_user: "UCBComedy"
+    roll_id: "4fa02d189a725b2c5a00083d"
+    shelby_auth_token: "2mDoEQm7mjAQQU1zPZER"
+  erb:
+    youtube_user: "erb"
+    roll_id: "518a6b25b415cc5a33058824"
+    shelby_auth_token: "73Yu6eYxMYSXod5tHHNf"
+  raywilliam:
+    youtube_user: "RayWilliamJohnson"
+    roll_id: "518a6be4b415cc5a3305aee2"
+    shelby_auth_token: "gyNuv7D3dgCWEKJVo5nT"
+  dontbethat:
+    youtube_user: "dontbethatguy"
+    roll_id: "518a6c6eb415cc1f55053eae"
+    shelby_auth_token: "3PsApKnjpEGzSjfM7Kf6"
+  gregandlou:
+    youtube_user: "GREGandLOU"
+    roll_id: "518a6cd8b415cc5a3305c941"
+    shelby_auth_token: "xKpKTXhNMTViJ8EXCjsD"
+  britanick:
+    youtube_user: "BriTANicKdotcom"
+    roll_id: "518a6d44b415cc21ee07a8b6"
+    shelby_auth_token: "yXb2wuhGk3y7dXnySHqP"
