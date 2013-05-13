@@ -115,3 +115,7 @@ defaults:
     search_term: "sxsx OR sxswi OR sxswmusic OR sxswfilm OR sxsw2013"
     roll_id: "50f6d18db415cc6a36010eed"
     shelby_auth_token: "FEXr3ie2rP3sxskpptHK"
+  nyc:
+    search_term: "NYC OR New York City"
+    roll_id: "51913464b415cc7bd80175db"
+    shelby_auth_token: "P4FvXALjqXhvJSUEnr3T"
