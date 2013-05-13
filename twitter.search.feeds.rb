@@ -21,13 +21,6 @@ load dir_root+'shelby_api.rb'
 config = YAML.load( File.read("#{dir_root}feeds.yml") )
 #config = YAML.load( File.read("feeds.yml") )
 
-
-###########################################
-# the twitter seach term that only returns results with links:
-
-search_term = URI.escape(ARGV[0] + " filter:links")
-rpp = ARGV[1].to_i || 20
-
 search_client = Grackle::Client.new
 
 service_config = config["defaults"][ARGV[0]]
@@ -46,6 +39,7 @@ redis_key = "last_#{search_term}_tweet_id"
 
 # getting id of last known tweet
 last_old_video_id = redis.get redis_key
+rpp = ARGV[1].to_i || 20
 
 # do twitter search:
 page = 1
