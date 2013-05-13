@@ -2,31 +2,24 @@
 require "time"
 require "redis"
 require "open-uri"
-require "yaml"
 require "httparty"
 require "json"
 
-
-# what type of feed is this process pulling in, e.g. "espn", "tedx"
-username = ARGV[0]
-
 # root working dir
-dir_root = ARGV[2] == "dev" ? '' : "/home/gt/utils/BotRolls/"
+dir_root = ARGV[1] == "dev" ? '' : "/home/gt/utils/BotRolls/"
 load dir_root+'shelby_api.rb'
 
-# name of yml config file
-filename = ARGV[1]
-config = YAML.load( File.read(dir_root+filename) )
+# Redis used for getting all youtube feed info and persisting last know video after polling
+redis = Redis.new
 
-service_config = config["defaults"][username]
+service_config = redis.hgetall 'youtube:'+ARGV[0]
 (puts "invalid youtube account"; exit) unless service_config
 
 youtube_user = service_config["youtube_user"]
 shelby_token = service_config["shelby_auth_token"]
-shelby_roll_id = service_config["roll_id"]
+shelby_roll_id = service_config["shelby_roll_id"]
 
 # Redis used for persisting last know video
-redis = Redis.new
 redis_key = "last_#{youtube_user}_video_time"
 
 # This is the feed with the feeds latest videos (json)
