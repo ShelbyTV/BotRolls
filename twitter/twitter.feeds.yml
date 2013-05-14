@@ -1,0 +1,60 @@
+defaults:
+  syria:
+    search_term: "#syria"
+    twitter_username: "syria_video"
+    shelby_auth_token: "xpMKvXASaWfAxvXeUP8e"
+    roll_id: "4fccffc188ba6b7a82000b92"
+    tw_token: "599302075-XWKaoTNF6bhXcxUdexlPSqfsUMmjCmOJdOKrrjPz"
+    tw_secret: "0cNz52jrmqF5fljbXFFxlAetDbcmaTQdySmKvlMdQ"
+  nowplaying:
+    search_term: "#nowplaying OR #music"
+    twitter_username: "MusicHashTagVid"
+    shelby_auth_token: "LPGA9okEFwzGGfvt4EEH"
+    roll_id: "4fcd0ca888ba6b07e30001d7"
+    tw_token: "599480155-5SjCN6Mf5arZnobb6ykF7jXpta4m34oHE9qULI"
+    tw_secret: "tUz9CUqZMlqkXdncmV5kH2Zo5BeAhkY4rCl4V0RyIM"
+  funny:
+    search_term: "#funny"
+    twitter_username: "funny_video"
+    shelby_auth_token: "AWxmwZS5oYSXg5jQWSws"
+    roll_id: "4f95a16a9a725b0a8c023904"
+  elections2012:
+    search_term: "#election2012 OR obama OR romney"
+    shelby_auth_token: "FLCa6xG6uzTZgg2YqfpH"
+    roll_id: "509559ddb415cc03c50115ab"
+  sandy:
+    search_term: "#sandy OR hurricane OR #sandyaid"
+    shelby_auth_token: "T7ZC8NzaxtuDXYY3ruDY"
+    roll_id: "5096790db415cc05a2006f5c"
+  thanksgiving:
+    search_term: "#thanksgiving"
+    shelby_auth_token: "LRTW4zxYZijshwjgMqJ3"
+    roll_id: "50a55e5cb415cc69e200d7a6"
+  sports:
+    search_term: "#nfl OR #nba OR #nhl OR #mlb OR #mets"
+    shelby_auth_token: "5qu1XeRQYv1tbUax61Rm"
+    roll_id: "50b62cd1b415cc4cb20039c2"
+  holidays:
+    search_term: "#holidays OR #christmas OR #chanukkah OR #kwanza"
+    shelby_auth_token: "6drxHRuHsdTZTVrikMPG"
+    roll_id: "50b62e2cb415cc4cb2005701"
+  fiscal_cliff:
+    search_term: "#fiscalcliff OR (Fiscal Cliff)"
+    shelby_auth_token: "ZrQuyxBx1qFU1mmh9d5C"
+    roll_id: "50b62f72b415cc0a88008cde"
+  marchmadness:
+    search_term: "#marchmadness OR marchmadness"
+    shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
+    roll_id: "50f6d51cb415cc7ebd000007"
+  dunk:
+    search_term: "#dunk OR dunk"
+    shelby_auth_token: "PJDNjNUWKKyQmszU6GDW"
+    roll_id: "50f6d548b415cc7ebd000009"
+  superbowl:
+    search_term: "superbowl OR superbowl2013"
+    shelby_auth_token: "SpuDp1xDHyY15ptcsAsn"
+    roll_id: "510a8149b415cc13c8008f17"
+  harlemshake:
+    search_term: "harlemshake OR (harlem shake)"
+    shelby_auth_token: "WCYJdAnZ8g8WVXqLZBYr"
+    roll_id: "511a79afb415cc1bfa000007"

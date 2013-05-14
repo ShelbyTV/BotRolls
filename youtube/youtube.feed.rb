@@ -1,3 +1,4 @@
+
 #!/usr/bin/env ruby
 require "time"
 require "redis"
@@ -6,28 +7,25 @@ require "httparty"
 require "json"
 
 # root working dir
-dir_root = ARGV[1] == "dev" ? '' : "/home/gt/utils/BotRolls/"
+dir_root = ARGV[1] == "dev" ? '' : "/home/gt/utils/BotRolls/utils/"
 load dir_root+'shelby_api.rb'
 
 # Redis used for getting all youtube feed info and persisting last know video after polling
 redis = Redis.new
 
-service_config = redis.hgetall 'youtube:'+ARGV[0]
-(puts "invalid youtube account"; exit) unless service_config
-
-youtube_user = service_config["youtube_user"]
+youtube_user = ARGV[0]
+service_config = redis.hgetall "youtube:#{youtube_user}"
 shelby_token = service_config["shelby_auth_token"]
 shelby_roll_id = service_config["shelby_roll_id"]
 
-# Redis used for persisting last know video
-redis_key = "last_#{youtube_user}_video_time"
+redis_video_key = "last_#{youtube_user}_video_time"
 
 # This is the feed with the feeds latest videos (json)
 feed_url = "http://gdata.youtube.com/feeds/api/users/" + youtube_user + "/uploads?v=2&alt=json"
 
 begin
   # getting pub_date of last known video in feed
-  pub_date_string = redis.get redis_key
+  pub_date_string = redis.get redis_video_key
 
   feed = JSON.parse(open(feed_url).read)
   entries = feed["feed"]["entry"]
@@ -52,7 +50,7 @@ begin
 
   # setting pub_date of latest video
   if entries.first['media$group'] and entries.first['media$group']['yt$uploaded']
-    redis.set(redis_key, entries.first['media$group']['yt$uploaded']['$t'])
+    redis.set(redis_video_key, entries.first['media$group']['yt$uploaded']['$t'])
   end
 rescue => e
   puts "[ YT FEED ERROR ] #{youtube_user} : #{e}"

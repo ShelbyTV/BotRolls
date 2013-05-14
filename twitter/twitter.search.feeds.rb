@@ -11,14 +11,14 @@ require "json"
 
 dir_root = "/home/gt/utils/BotRolls/"
 
-load dir_root+'embedly_regexes.rb'
-load dir_root+'shelby_api.rb'
+load dir_root+'utils/embedly_regexes.rb'
+load dir_root+'utils/shelby_api.rb'
 #load 'embedly_regexes.rb'
 #load 'shelby_api.rb'
 
 ###########################################
-# Loading the config file w urls/search terms/twitter acct info 
-config = YAML.load( File.read("#{dir_root}feeds.yml") )
+# Loading the config file w urls/search terms/twitter acct info
+config = YAML.load( File.read("#{dir_root}twitter.feeds.yml") )
 #config = YAML.load( File.read("feeds.yml") )
 
 
@@ -68,9 +68,9 @@ last_old_video_id = redis.get redis_key
 
 # do twitter search:
 page = 1
-search_result = search_client[:search].search? :q => search_term, 
-                    :include_entities => true, 
-                    :rpp => rpp, 
+search_result = search_client[:search].search? :q => search_term,
+                    :include_entities => true,
+                    :rpp => rpp,
                     :since_id => last_old_video_id,
                     :page => page
 
@@ -83,7 +83,7 @@ begin
   while search_result.results.length > 0 and page < 10
     search_result.results.each do |r|
       r.entities.urls.each do |u|
-        if Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)      
+        if Embedly::Regexes.video_regexes_matches?(r.entities.urls.first.expanded_url)
           begin
             # Send vids to shelbz via shelby api
             # some tweets have multiple urls
@@ -97,16 +97,16 @@ begin
         end
       end
     end
-    
+
     page += 1
-        
-    search_result = search_client[:search].search? :q => search_term, 
-                        :include_entities => true, 
-                        :rpp => rpp, 
+
+    search_result = search_client[:search].search? :q => search_term,
+                        :include_entities => true,
+                        :rpp => rpp,
                         :since_id => last_old_video_id,
                         :page => page
   end
-  
+
 rescue => e
   puts "[#{Time.now}] [#{search_term.swapcase} ERROR]: #{e}"
 end
