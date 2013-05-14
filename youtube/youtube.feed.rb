@@ -15,7 +15,7 @@ redis = Redis.new
 
 youtube_user = ARGV[0]
 service_config = redis.hgetall "youtube:#{youtube_user}"
-shelby_token = service_config["shelby_auth_token"]
+shelby_auth_token = service_config["shelby_auth_token"]
 shelby_roll_id = service_config["shelby_roll_id"]
 
 redis_video_key = "last_#{youtube_user}_video_time"
@@ -42,7 +42,7 @@ begin
     next if (last_known_video_time.is_a?(Time) and (video[:pub_date] <= last_known_video_time))
 
     if video[:url] and shelby_roll_id and shelby_token
-      r = Shelby::API.create_frame(shelby_roll_id, shelby_token, video[:url], video[:description])
+      r = Shelby::API.create_frame(shelby_roll_id, shelby_auth_token, video[:url], video[:description])
       puts "added: #{video[:pub_date]}"
     end
 
