@@ -18,6 +18,9 @@ service_config = redis.hgetall "youtube:#{youtube_user}"
 shelby_auth_token = service_config["shelby_auth_token"]
 shelby_roll_id = service_config["shelby_roll_id"]
 
+puts ">> Loaded service config:"
+p service_config
+
 redis_video_key = "last_#{youtube_user}_video_time"
 
 # This is the feed with the feeds latest videos (json)
@@ -30,6 +33,7 @@ begin
   feed = JSON.parse(open(feed_url).read)
   entries = feed["feed"]["entry"]
   entries.reverse.each do |v|
+    print "."
     last_known_video_time = (pub_date_string =="" or pub_date_string.nil?) ? "" : Time.parse(pub_date_string)
 
     video = Hash.new
@@ -41,7 +45,11 @@ begin
     #move on if we have seen this pub_date before
     next if (last_known_video_time.is_a?(Time) and (video[:pub_date] <= last_known_video_time))
 
+    puts "\n>> Found new video"
+    p video
+
     if video[:url] and shelby_roll_id and shelby_auth_token
+      puts '>> Processing Video'
       r = Shelby::API.create_frame(shelby_roll_id, shelby_auth_token, video[:url], video[:description])
       puts "added: #{video[:pub_date]}"
     end
@@ -52,6 +60,9 @@ begin
   if entries.first['media$group'] and entries.first['media$group']['yt$uploaded']
     redis.set(redis_video_key, entries.first['media$group']['yt$uploaded']['$t'])
   end
+
+  puts ''
+
 rescue => e
   puts "[ YT FEED ERROR ] #{youtube_user} : #{e}"
 end
