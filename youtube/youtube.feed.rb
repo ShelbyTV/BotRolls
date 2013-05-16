@@ -41,7 +41,7 @@ begin
     #move on if we have seen this pub_date before
     next if (last_known_video_time.is_a?(Time) and (video[:pub_date] <= last_known_video_time))
 
-    if video[:url] and shelby_roll_id and shelby_token
+    if video[:url] and shelby_roll_id and shelby_auth_token
       r = Shelby::API.create_frame(shelby_roll_id, shelby_auth_token, video[:url], video[:description])
       puts "added: #{video[:pub_date]}"
     end
