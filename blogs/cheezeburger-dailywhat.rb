@@ -28,7 +28,7 @@ begin
   feed = JSON.parse(open(feed_url).read)
   entries = feed["responseData"]["feed"]["entries"]
 
-  entries.reverse.each do |p|
+  entries.reverse.each do |v|
     pubDate = v['publishedDate']
 
     # dont look at this item if we have seen it before
