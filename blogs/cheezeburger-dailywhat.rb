@@ -42,6 +42,7 @@ begin
     urls = post_content.scan(/(?i)\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/)
     # flatten the results and remove any nil entries from scan
     urls.flatten!
+    urls.uniq!
     urls.delete_if {|u| u == nil }
 
     description = "#{post_title}"
