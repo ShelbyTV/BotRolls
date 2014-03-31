@@ -12,13 +12,13 @@ load dir_root+'embedly_regexes.rb'
 
 
 
-feed_url = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://feeds.feedburner.com/shortformblog/feed"
-shelby_token = "thassmSssm2zAM9yNRmy"
-shelby_roll_id = "51131dacb415cc1ded14408d"
+feed_url = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://thedailywhat.cheezburger.com/rss"
+shelby_token = "WJQFsq9XPzwzxLgkd3qf"
+shelby_roll_id = "4fa28d849a725b79c9000228"
 
 # Redis used for persisting last know post
 redis = Redis.new
-redis_key = "last_shortformblog_video_time"
+redis_key = "last_thedailywhat_video_time"
 
 begin
   # getting pubDate of last known post in feed
@@ -28,7 +28,7 @@ begin
   feed = JSON.parse(open(feed_url).read)
   entries = feed["responseData"]["feed"]["entries"]
 
-  entries.reverse.each do |v|
+  entries.reverse.each do |p|
     pubDate = v['publishedDate']
 
     # dont look at this item if we have seen it before
@@ -44,7 +44,7 @@ begin
     urls.flatten!
     urls.delete_if {|u| u == nil }
 
-    description = "#{post_title} : #{post_link}"
+    description = "#{post_title}"
 
     urls.each do |url|
       if Embedly::Regexes.video_regexes_matches?(url)
@@ -55,5 +55,5 @@ begin
     redis.set redis_key, pubDate
   end
 rescue => e
-  puts "[ Shortformblog FEED ERROR ] #{e}"
+  puts "[ DailyWhat FEED ERROR ] #{e}"
 end

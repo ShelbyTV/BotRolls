@@ -7,7 +7,7 @@ require "yaml"
 require "httparty"
 require "json"
 
-dir_root = "/home/gt/utils/BotRolls/"
+dir_root = "/home/gt/utils/BotRolls/utils/"
 #dir_root = "" #for local dev
 load dir_root+'shelby_api.rb'
 load dir_root+'embedly_regexes.rb'
