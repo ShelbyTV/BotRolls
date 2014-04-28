@@ -12,11 +12,11 @@ module Shelby
       r = get( "/roll/#{id}" ).parsed_response
     end
 
-    def self.create_frame(roll_id, token, url, text, short_link=nil)
+    def self.create_frame(roll_id, token, url, text, original_source_url=nil)
       u = post("/roll/#{roll_id}/frames", :query => { :auth_token => token,
                   :url => url,
                   :text => text,
-                  :short_link => short_link })
+                  :original_source_url => original_source_url })
     end
 
   end
