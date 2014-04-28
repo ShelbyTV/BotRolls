@@ -12,13 +12,13 @@ load dir_root+'embedly_regexes.rb'
 
 
 
-feed_url = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://geekuniverse.cheezburger.com/rss"
+feed_url = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://geek.cheezburger.com/rss"
 shelby_token = "egeceXptAUvEYx9GkpMi"
 shelby_roll_id = "535e91d559b052099200005f"
 
 # Redis used for persisting last know post
 redis = Redis.new
-redis_key = "last_geekuniverse_video_time"
+redis_key = "last_geek_video_time"
 
 begin
   # getting pubDate of last known post in feed
