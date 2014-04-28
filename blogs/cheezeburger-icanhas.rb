@@ -49,7 +49,8 @@ begin
 
     urls.each do |url|
       if Embedly::Regexes.video_regexes_matches?(url)
-        r = Shelby::API.create_frame(shelby_roll_id, shelby_token, url, description)
+        short_link = {:original => post_link}
+        r = Shelby::API.create_frame(shelby_roll_id, shelby_token, url, description, short_link)
         puts description
       end
     end
