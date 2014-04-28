@@ -16,7 +16,7 @@ module Shelby
       u = post("/roll/#{roll_id}/frames", :query => { :auth_token => token,
                   :url => url,
                   :text => text,
-                  :source => source })
+                  :short_link => short_link })
     end
 
   end
