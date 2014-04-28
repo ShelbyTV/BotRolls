@@ -13,8 +13,8 @@ load dir_root+'embedly_regexes.rb'
 
 
 feed_url = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://roflrazzi.cheezburger.com/rss"
-shelby_token = "MwtfjrxXkAs6U8Sfzxvg"
-shelby_roll_id = "4fc64e769a725b22f70065b8"
+shelby_token = "QfcNWkVGnCx3KBcxicga"
+shelby_roll_id = "4fe8ae5dd1041240e100d7f5"
 
 # Redis used for persisting last know post
 redis = Redis.new
