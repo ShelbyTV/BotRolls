@@ -2,6 +2,13 @@
 
 *BotRolls* is a project aimed to auto-populate rolls based on a theme or search query
 
+*MAY 2014 UPDATE*
+They are run on the utils server (`198.101.158.13`) via a master process for youtube feeds and on an individual basis for blogs and other rss feeds.
+Processes are kicked off via crontab, eg
+`*/10 * * * * /bin/bash -l -c 'rvm use ruby-1.9.3-p392 && ruby /home/gt/utils/BotRolls/blogs/cheezeburger-icanhas.rb' >/home/gt/logs/icanhas-feed.log 2>&1`
+or
+`*/10 * * * * /bin/bash -l -c 'rvm use ruby-1.9.3-p392 && ruby /home/gt/utils/BotRolls/youtube/youtube.feed.master.rb' >/home/gt/logs/yt-feeds.log 2>&1`
+
 Sources include:
 - RSS Feeds
 - Twitter Search
